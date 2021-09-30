@@ -8,11 +8,6 @@ pipeline
     }
     }
   
-   stage('Deploy Application in Mulesoft Cloudhub'){
-   steps{
-   bat 'mvn package -DskipTests deploy -DmuleDeploy'
-   }
-   }
    stage('Ok') {
    steps {
      echo "Ok"
