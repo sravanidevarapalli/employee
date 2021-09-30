@@ -21,10 +21,8 @@ pipeline
    
    stage('email notification'){
    steps {
-   always {
-   emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+   emailext attachLog: true, body: 'email---', subject: 'from jenkins', to: 'sravanidevarapalli17@gmail.com'
    
-   }
   }
   }
   }
