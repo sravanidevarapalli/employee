@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+	<file:config name="File_Config" doc:name="File Config" doc:id="edb02b22-33ad-45bd-b3b7-263ec981452e" />
+	<flow name="get" doc:id="799f8f8a-5e71-4e8a-bea9-1b3837129587" >
+		<file:read doc:name="Read" doc:id="c07e8be9-0b94-45ec-8b5e-cc3d1386a32a" config-ref="File_Config" path="C:\Users\SDEVARAP\Desktop\accounts.json" />
+		<logger level="INFO" doc:name="Logger" doc:id="4c8fbc3b-b576-43f0-bb5b-3f6c17661185" message="#[payload]"/>
+	</flow>
+	<flow name="post" doc:id="f594badb-9b2d-442d-b88c-43129c6dd57e" >
+		<logger level="INFO" doc:name="Logger" doc:id="86c96665-f639-4444-910e-426b2f554ad9" message="#[payload]"/>
+	</flow>
+</mule>
