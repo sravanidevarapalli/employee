@@ -14,7 +14,7 @@ pipeline
    }
    }
    
-   stage('Ok') {
+   stage('email') {
             steps {
                 emailext attachLog: true, body: '', subject: 'from jenkins', to: 'sravanidevarapalli17@gmail.com'
             }
